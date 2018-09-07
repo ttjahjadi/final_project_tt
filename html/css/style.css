@@ -1,0 +1,138 @@
+body{
+    margin: 0;
+}
+.container {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main{
+    padding: 2em;
+    flex-grow: 1;
+}
+
+footer{
+    background: #000;
+}
+
+/* main navigation styling  */
+.button-container{ 
+    height: 35px;
+    width: 35px;    
+    position: fixed;
+    top: 2%;
+    right: 2%;  
+    cursor: pointer;
+    z-index: 100;
+    
+}
+
+.button-container span{
+    background: pink;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .7s;
+}
+
+.button-container.active span{
+    background: #fff;
+}
+
+
+.button-container span:nth-child(2){
+    top: 11px;
+}
+
+.button-container span:nth-child(3){
+    top: 22px;
+}
+
+
+.button-container.active .top-button{
+    transform: translateX(0) rotate(-45deg) translateY(17px);
+}
+
+.button-container.active .mid-button{
+    /* transform: translateX(0) rotate(-45deg) translateY(23%); */
+    opacity: 0;
+}
+
+.button-container.active .bottom-button{
+    transform: translateX(3px) rotate(45deg) translateY(-13px);
+}
+
+/* overlay styling */
+
+.overlay{
+    position: fixed;
+    background: pink;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 0%;
+    transition: .3s all ease-in-out;
+    z-index: 99;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.overlay.open{
+    height: 100%;
+    visibility: visible;
+    opacity: .97;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+li{
+    flex-grow: .09;
+    font-size: 3rem;
+    opacity: 0;
+}
+
+.overlay ul li {
+    position: relative;
+    opacity: 0;
+}
+
+.overlay.open li {
+animation: fadeInRight .5s ease forwards;
+animation-delay: .35s;
+}
+
+.overlay.open li:nth-child(2){
+    animation-delay: .45s;
+}
+
+.overlay.open li:nth-child(3){
+    animation-delay: .5s;
+}
+
+.overlay.open li:nth-child(4){
+    animation-delay: .55s;
+}
+
+
+@keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      top: 20%;
+    }
+    100% {
+      opacity: 1;
+      left: 0;
+    }
+  }
+  
