@@ -1,0 +1,10 @@
+body {font-family: sans-serif;}
+nav {
+  position: fixed;
+  width: 200px;
+  background: #eee;
+}
+article { padding-left: 250px;}
+a:link { text-decoration: none}
+a:hover {font-weight: bold}
+a.is-selected {font-weight: bold}
