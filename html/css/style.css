@@ -1,3 +1,11 @@
+html{
+    box-sizing:border-box;
+    -ms-overflow-style:scrollbar;
+    overflow-y: scroll;
+}
+*,*::before,*::after{
+    box-sizing:inherit;
+}
 body{
     margin: 0;
 }
@@ -9,12 +17,17 @@ body{
 }
 
 main{
-    padding: 2em;
+    padding: .6em;
     flex-grow: 1;
 }
 
 footer{
     background: #000;
+    height: 50px;
+}
+
+footer sub{
+    color: #fff;
 }
 
 /* main navigation styling  */
@@ -66,6 +79,15 @@ footer{
     transform: translateX(3px) rotate(45deg) translateY(-13px);
 }
 
+ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
 /* overlay styling */
 
 .overlay{
@@ -87,7 +109,7 @@ footer{
     opacity: .97;
 }
 
-ul{
+.overlay ul{
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -96,7 +118,7 @@ ul{
     align-items: center;
 }
 
-li{
+.overlay li{
     flex-grow: .09;
     font-size: 3rem;
     opacity: 0;
@@ -134,5 +156,179 @@ animation-delay: .35s;
       opacity: 1;
       left: 0;
     }
+}
+
+.hero-image{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/img/180910-banner-image.jpg');
+    height: 520px;
+    overflow: hidden;
+    background-size: contain;
+}
+
+.hero-image h1{
+    position: relative;
+    padding-top: 5em;
+    color: #fff;
+    text-align: center;
+}
+  
+.sub-nav{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.sub-nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/* Maps styling */
+
+.maps{
+    display: flex;
+    flex-direction: row;
+}
+
+.section-left{
+    max-width: 33%;
+}
+
+.section-middle{
+    max-width: 33%;
+    align-self: center;
+}
+
+.section-right {
+    max-width: 33%;
+}
+
+.maps .section-middle img{
+    max-width: 100%;
+    padding: 1em;
+}
+
+/* Food styling */
+
+.food-list{
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.food-item{
+    margin: 0 10px 0 10px;
+}
+
+
+
+/* Form styling */
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 50vh;
+    background: rgba(19, 35, 47, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 4px;
+    padding: 40px;
+}
+
+.form .tab-group{
+    padding-top: 2em;
+    padding-bottom: 2em;
+    display: flex;
+    align-content: stretch;
+    align-items: stretch;
+    flex-flow: row nowrap;
+    width: 100%;
+}
+
+.form .tab-group li{
+    flex: 1;
+    padding: 5px;
+}
+
+.tab.active a{
+    background: #1ab188;
+    color: #fff;
+}
+
+.tab-group li a{
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+    background: rgba(160, 179, 176, 0.25);
+    width: 100%;
+    color: #a0b3b0;
+    font-size: 20px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+.top-row {
+    display: flex;
+    width: 100%;
+}
+
+.top-row .field-wrap{
+    flex: 1;
+    padding: 5px;
+    position: relative;
+}
+
+input, textarea {
+    font-size: 22px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 5px 10px;
+    background: none;
+    background-image: none;
+    border: 1px solid #a0b3b0;
+    color: #ffffff;
+    border-radius: 0;
+    transition: border-color .25s ease, box-shadow .25s ease;
+  }
+
+.tab-content h1{
+    color: #fff;
+    margin: 0;
+    margin-bottom: .6em;
+    text-align: center;
+}
+
+label {
+    position: absolute;
+    -webkit-transform: translateY(6px);
+            transform: translateY(6px);
+    left: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.25s ease;
+    -webkit-backface-visibility: hidden;
+    pointer-events: none;
+    font-size: 22px;
+  }
+  label .req {
+    margin: 2px;
+    color: #1ab188;
   }
   
+  label.active {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+    left: 2px;
+    font-size: 14px;
+  }
+  label.active .req {
+    opacity: 0;
+  }
+  
+  label.highlight {
+    color: #ffffff;
+  }

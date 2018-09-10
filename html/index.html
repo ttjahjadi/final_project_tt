@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Swag Eats | Good Food Guidance For Your Belly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
+    <link rel="shortcut icon" type="image/png" href="/img/favicon.ico"/>
 </head>
 <body>
     <div class="container">
@@ -27,10 +30,135 @@
                     </ul>
                 </nav>
             </div>
+            <div class="hero-image">
+                <!-- <img src="/img/180910-banner-image.jpg" alt="Main Banner Image"> -->
+                <h1>Heading 1 Goes Here</h1>
+            </div>
         </header>
         <main>
-            <section>
+            <!--Sub Navigation-->
+            <div class="sub-nav" id="sub-nav">
+                <nav>
+                    <ul>
+                        <li><a href="#">Sub nav 1</a></li>
+                        <li><a href="#">Sub nav 2</a></li>
+                        <li><a href="#">Sub nav 3</a></li>
+                        <li><a href="#">Sub nav 4</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <!--Maps and features-->
+            <section class="maps">
+                <div section-left>
+                    <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus assumenda suscipit rem vel. Ab nulla dignissimos suscipit quam deserunt doloremque temporibus, reiciendis dolorem vero voluptas unde perferendis illum, porro ut.</p>
+                    <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus assumenda suscipit rem vel. Ab nulla dignissimos suscipit quam deserunt doloremque temporibus, reiciendis dolorem vero voluptas unde perferendis illum, porro ut.</p>
+                </div>
+                <div class="section-middle">
+                    <img src="/img/180910-infographic-maps.jpg" alt="Infographic Maps">
+                </div>
+                <div class="section-right">
+                    <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut deleniti suscipit nostrum, distinctio fugiat esse fuga, eveniet architecto tempore est hic eaque voluptatem quam officiis ab nihil praesentium atque voluptatibus!</p>
+                    <h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus assumenda suscipit rem vel. Ab nulla dignissimos suscipit quam deserunt doloremque temporibus, reiciendis dolorem vero voluptas unde perferendis illum, porro ut.</p>
+                </div>
+            </section>
+            <!--Food Filter With Overlay-->
+            <section class="food-filter-box">
+                <h2>Heading 2</h2>
+                <h4>Heading 4</h4>
+                <form action="#">
+                    <span>
+                        <input type="checkbox" name="Chinese" id="Chinese">
+                        <label for="Chinese">Chinese</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="Pasta" id="Pasta">
+                        <label for="Pasta">Pasta</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="Burger" id="Burger">
+                        <label for="Burger">Burger</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="Pizza" id="Pizza">
+                        <label for="Pizza">Pizza</label>
+                    </span>
+                    <span>
+                        <input type="checkbox" name="Vietnamese" id="Vietnamese">
+                        <label for="Vietnamese">Vietnamese</label>
+                    </span>
+                </form>
+                <article class="food-list">
+                    <div class="food-item">
+                        <img src="/img/180910-food-item.jpg" alt="">
+                    </div>
+                    <div class="food-item">
+                        <img src="/img/180910-food-item.jpg" alt="">
+                    </div>
+                    <div class="food-item">
+                        <img src="/img/180910-food-item.jpg" alt="">
+                    </div>
+                    <div class="food-item">
+                        <img src="/img/180910-food-item.jpg" alt="">
+                    </div>
+                    <div class="food-item">
+                        <img src="/img/180910-food-item.jpg" alt="">
+                    </div>
+                    <div class="food-item">
+                        <img src="/img/180910-food-item.jpg" alt="">
+                    </div>
+                    <div class="food-item">
+                        <img src="/img/180910-food-item.jpg" alt="">
+                    </div>
+                    <div class="food-item">
+                        <img src="/img/180910-food-item.jpg" alt="">
+                    </div>
+                    <div class="food-item">
+                        <img src="/img/180910-food-item.jpg" alt="">
+                    </div>
+                    <div class="food-item">
+                        <img src="/img/180910-food-item.jpg" alt="">
+                    </div>
+                    <div class="food-item">
+                        <img src="/img/180910-food-item.jpg" alt="">
+                    </div>
+                    <div class="food-item">
+                        <img src="/img/180910-food-item.jpg" alt="">
+                    </div>
+                </article>
+            </section>
+            <!--Subscribe Form-->
+            <section class="form">
+                <ul class="tab-group">
+                    <li class="tab active"><a href="#signup">Sign Up</a></li>
+                    <li class="tab"><a href="#login">Login</a></li>
+                </ul>
                 
+                <div class="tab-content">
+                    <div id="signup">
+                        <h1>Sign Up for Free</h1>
+                    </div>
+                
+                    <form action="/" method="post">
+                        <div class="top-row">
+                            <div class="field-wrap">
+                                <label>First Name<span class="req">*</span></label>
+                                <input type="text" required autocomplete="on">
+                            </div>
+
+                            <div class="field-wrap">
+                                <label>Last Name<span class="req">*</span></label>
+                                <input type="text" required autocomplete="on">
+                            </div>
+                        </div>
+                        <div class="field-wrap">
+                            <input type="submit" value="Send">
+                        </div>
+                    </form>
+                </div>
             </section>
         </main>
         <footer>
