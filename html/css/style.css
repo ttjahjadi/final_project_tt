@@ -229,12 +229,13 @@ animation-delay: .35s;
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 50vh;
+    height: 100vh;
     background: rgba(19, 35, 47, 0.9);
     max-width: 600px;
     margin: 0 auto;
     border-radius: 4px;
     padding: 40px;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 .form .tab-group{
@@ -278,11 +279,16 @@ animation-delay: .35s;
 
 .top-row .field-wrap{
     flex: 1;
-    padding: 5px;
+    padding: 0 5px 0 0;
     position: relative;
 }
 
-input, textarea {
+.login{
+    width: 100%;
+    flex: 1;
+}
+
+.field-wrap input, textarea {
     font-size: 22px;
     display: block;
     width: 100%;
@@ -294,16 +300,27 @@ input, textarea {
     color: #ffffff;
     border-radius: 0;
     transition: border-color .25s ease, box-shadow .25s ease;
-  }
+}
+
+.tab-content {
+    max-width: 600px;
+    width: 100%;
+}
 
 .tab-content h1{
     color: #fff;
     margin: 0;
     margin-bottom: .6em;
     text-align: center;
+    font-weight: 300;
 }
 
-label {
+.field-wrap{
+    margin-top: 40px;
+    position: relative;
+}
+
+.field-wrap label {
     position: absolute;
     -webkit-transform: translateY(6px);
             transform: translateY(6px);
@@ -313,22 +330,27 @@ label {
     -webkit-backface-visibility: hidden;
     pointer-events: none;
     font-size: 22px;
-  }
-  label .req {
+}
+
+.field-wrap label .req {
     margin: 2px;
     color: #1ab188;
-  }
+}
   
-  label.active {
-    -webkit-transform: translateY(50px);
-            transform: translateY(50px);
-    left: 2px;
+.field-wrap label.active {
+    -webkit-transform: translateY(-34px);
+            transform: translateY(-34px);
+    left: 0px;
     font-size: 14px;
-  }
-  label.active .req {
+}
+.field-wrap label.active .req {
     opacity: 0;
-  }
+}
   
-  label.highlight {
+.field-wrap label.highlight {
     color: #ffffff;
-  }
+}
+
+.tab-content > div:last-child {
+    display: none;
+}
