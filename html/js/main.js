@@ -53,4 +53,31 @@ $(document).ready(function () {
         $(target).fadeIn(600);
         
     });
+
+    //Food filter
+    // $("input").change(function () { 
+    //     const test = $( "#Chinese" ).attr( "checked" , true );
+    //     if(test === 'true'){
+    //         console.log('clicked');
+    //     } else
+    //     if(test === 'false'){
+    //         console.log('hello');
+    //     }
+    //     console.log(test);
+    // });
+    
+    $('#Chinese').on('change', function() { //Change the value of the element
+        // console.log(this.value)
+        // debugger
+        
+        
+        // console.log(true)
+        $('.chinese').removeClass('hidden');
+        // if( test === true){
+        //     $('.chinese').removeClass('hidden');
+        // } else if( test === false){
+        //     $('.chinese').removeClass('hidden');
+        // }
+    });
+    
 });

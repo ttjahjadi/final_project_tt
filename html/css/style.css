@@ -221,6 +221,10 @@ animation-delay: .35s;
     margin: 0 10px 0 10px;
 }
 
+.food-list.hidden{
+    display: none;
+}
+
 
 
 /* Form styling */
