@@ -17,8 +17,9 @@ body{
 }
 
 main{
-    padding: .6em;
+    padding: 0 .6em .6em .6em;
     flex-grow: 1;
+    background: #262626;
 }
 
 footer{
@@ -213,17 +214,51 @@ animation-delay: .35s;
     color: #fff;
     text-align: center;
 }
-  
-.sub-nav{
-    padding-top: 1em;
-    padding-bottom: 1em;
-}
 
 .sub-nav ul{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    height: 100px;
 }
+
+.sub-nav ul li{
+    align-self: center;
+    position: relative;
+    padding: 2.6rem 0;
+}
+
+.sub-nav ul li a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 15;
+}
+  
+.sticky + .content {
+    padding-top: 60px;
+}
+
+.sub-nav nav ul li.active::after{
+    transition:.25s cubic-bezier(0.39,0.575,0.565,1);
+    content:" ";
+    /* display:block; */
+    width:100%;
+    position:absolute;
+    bottom:0;
+    right:0;
+    height:.25rem;
+    background-color:#ee2a2a;
+    opacity: 1;
+}
+
 
 /* Maps styling */
 
@@ -257,14 +292,21 @@ animation-delay: .35s;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    height: 100%;
 }
 
 .food-item{
     margin: 0 10px 0 10px;
 }
 
+.food-item img{
+    width: 300px;
+    height: auto;
+}
+
 .food-list.hidden{
     display: none;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 

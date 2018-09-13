@@ -45,10 +45,10 @@
             <div class="sub-nav" id="sub-nav">
                 <nav>
                     <ul>
-                        <li><a href="#">Sub nav 1</a></li>
-                        <li><a href="#">Sub nav 2</a></li>
-                        <li><a href="#">Sub nav 3</a></li>
-                        <li><a href="#">Sub nav 4</a></li>
+                        <li class="active"><a href="#" >Subnav 1</a></li>
+                        <li><a href="#">Subnav 2</a></li>
+                        <li><a href="#">Subnav 3</a></li>
+                        <li><a href="#">Subnav 4</a></li>
                     </ul>
                 </nav>
             </div>
@@ -81,58 +81,29 @@
                     <span><a href="" id="vietnamese">Vietnamese</a></span>
                     <span><a href="" id="cafe">Cafe</a></span>
                 </div>
-                <!-- <form action="#" id="typeOfCu">
-                    <span>
-                        <input type="checkbox" name="Chinese" id="Chinese" value=1 >
-                        <label for="Chinese">Chinese</label>
-                    </span>
-                    <span>
-                        <input type="checkbox" name="Pasta" id="Pasta">
-                        <label for="Pasta">Pasta</label>
-                    </span>
-                    <span>
-                        <input type="checkbox" name="Burger" id="Burger">
-                        <label for="Burger">Burger</label>
-                    </span>
-                    <span>
-                        <input type="checkbox" name="Pizza" id="Pizza">
-                        <label for="Pizza">Pizza</label>
-                    </span>
-                    <span>
-                        <input type="checkbox" name="Vietnamese" id="Vietnamese">
-                        <label for="Vietnamese">Vietnamese</label>
-                    </span>
-                </form> -->
+                <!--Chinese-->
                 <article class="food-list chinese hidden">
                     <div class="food-item">
-                        <img src="/img/180910-food-item.jpg" alt="">
+                        <a href="#ex1" rel="modal:open"><img src="/img/180913-asian-food-bowl-cuisine.jpg" alt="Chinese Food 1"></a>
+                        <div id="ex1" class="modal">
+                            <img src="/img/180913-asian-food-bowl-cuisine.jpg" alt="Chinese Food 1">
+                            <a href="#" rel="modal:close">Close</a>
+                        </div>
                     </div>
                     <div class="food-item">
-                        <img src="/img/180910-food-item.jpg" alt="">
+                        <a href=""><img src="/img/180913-blur-close-up-cooking.jpg" alt="Chinese Food 2"></a>
                     </div>
                     <div class="food-item">
-                        <img src="/img/180910-food-item.jpg" alt="">
+                        <a href=""><img src="/img/180913-bowl-chair-chinese-food.jpg" alt="Chinese Food 3"></a>
                     </div>
                     <div class="food-item">
-                        <img src="/img/180910-food-item.jpg" alt="">
+                        <a href=""><img src="/img/180913-bowl-chinese-food-delicious.jpg" alt="Chinese Food 4"></a>
                     </div>
                     <div class="food-item">
-                        <img src="/img/180910-food-item.jpg" alt="">
+                        <a href=""><img src="/img/180913-burrito-chicken-close-up.jpg" alt="Chinese Food 5"></a>
                     </div>
                     <div class="food-item">
-                        <img src="/img/180910-food-item.jpg" alt="">
-                    </div>
-                    <div class="food-item">
-                        <img src="/img/180910-food-item.jpg" alt="">
-                    </div>
-                    <div class="food-item">
-                        <img src="/img/180910-food-item.jpg" alt="">
-                    </div>
-                    <div class="food-item">
-                        <img src="/img/180910-food-item.jpg" alt="">
-                    </div>
-                    <div class="food-item">
-                        <img src="/img/180910-food-item.jpg" alt="">
+                        <a href=""><img src="/img/180913-chopsticks-close-up-cuisine.jpg" alt="Chinese Food 6"></a>
                     </div>
                 </article>
                 <article class="food-list pizza-pasta hidden">
@@ -340,5 +311,8 @@
         </footer>
     </div>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,400i,600,700" rel="stylesheet">
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
 </body>
 </html>

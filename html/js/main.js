@@ -1,3 +1,11 @@
+// Hamburger menu script
+function clickNav() {
+    document.querySelector('.button-container').classList.toggle('active'); // When this is clicked it will toggle the active class
+    document.querySelector('#overlay').classList.toggle('open'); //When this is clicked it will toggle the overlay class
+}
+
+
+
 //Wait till document loads before running the script
 document.addEventListener('DOMContentLoaded', function () {
     //Listen for a click event on chinese
@@ -30,14 +38,28 @@ document.addEventListener('DOMContentLoaded', function () {
         getCafe = document.querySelector('.cafe');
         getCafe.classList.toggle('hidden');
     })
+
+    // When the user scrolls the page, execute myFunction 
+    window.onscroll = function() {
+        scrollSubNav()
+    };
+
+    // Get the navbar
+    const navbar = document.querySelector("#sub-nav");
+
+    // Get the offset position of the navbar
+    const sticky = navbar.offsetTop - 100;
+
+    // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+    function scrollSubNav() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+        
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
  })
-
-// Hamburger menu script
-function clickNav() {
-    document.querySelector('.button-container').classList.toggle('active'); // When this is clicked it will toggle the active class
-    document.querySelector('#overlay').classList.toggle('open'); //When this is clicked it will toggle the overlay class
-}
-
 
 $(document).ready(function () {
     //Form Trigger Javascript
@@ -85,30 +107,5 @@ $(document).ready(function () {
         
     });
 
-    //Food filter
-    // $("input").change(function () { 
-    //     const test = $( "#Chinese" ).attr( "checked" , true );
-    //     if(test === 'true'){
-    //         console.log('clicked');
-    //     } else
-    //     if(test === 'false'){
-    //         console.log('hello');
-    //     }
-    //     console.log(test);
-    // });
-    
-    $('#Chinese').on('change', function() { //Change the value of the element
-        // console.log(this.value)
-        // debugger
-        
-        
-        // console.log(true)
-        $('.chinese').removeClass('hidden');
-        // if( test === true){
-        //     $('.chinese').removeClass('hidden');
-        // } else if( test === false){
-        //     $('.chinese').removeClass('hidden');
-        // }
-    });
     
 });
