@@ -1,4 +1,9 @@
-document.addEventListener('DOMContentLoaded', function () { 
+document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('.cuisine-list a').addEventListener('click', function (e) {
+        e.preventDefault();
+        console.log('clicked');
+        
+    })
  })
 
 
