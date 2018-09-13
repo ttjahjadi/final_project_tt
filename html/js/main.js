@@ -1,15 +1,41 @@
+//Wait till document loads before running the script
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelector('.cuisine-list a').addEventListener('click', function (e) {
+    //Listen for a click event on chinese
+    document.querySelector('#chinese').addEventListener('click', function (e) {
         e.preventDefault();
-        console.log('clicked');
-        
+        getChinese = document.querySelector('.chinese');
+        getChinese.classList.toggle('hidden');
+    })
+     //Listen for a click event on pizza & pasta
+    document.querySelector('#pizza-pasta').addEventListener('click', function (e) {
+        e.preventDefault();
+        getPizzaPasta = document.querySelector('.pizza-pasta');
+        getPizzaPasta.classList.toggle('hidden');
+    })
+    //Listen for a click event on burger
+    document.querySelector('#burger').addEventListener('click', function (e) {
+        e.preventDefault();
+        getBurger = document.querySelector('.burger');
+        getBurger.classList.toggle('hidden');
+    })
+    //Listen for a click event on vietnamese
+    document.querySelector('#vietnamese').addEventListener('click', function (e) {
+        e.preventDefault();
+        getVietnamese = document.querySelector('.vietnamese');
+        getVietnamese.classList.toggle('hidden');
+    })
+    //Listen for a click event on cafe
+    document.querySelector('#cafe').addEventListener('click', function (e) {
+        e.preventDefault();
+        getCafe = document.querySelector('.cafe');
+        getCafe.classList.toggle('hidden');
     })
  })
 
-
+// Hamburger menu script
 function clickNav() {
-    document.querySelector('.button-container').classList.toggle('active');
-    document.querySelector('#overlay').classList.toggle('open');
+    document.querySelector('.button-container').classList.toggle('active'); // When this is clicked it will toggle the active class
+    document.querySelector('#overlay').classList.toggle('open'); //When this is clicked it will toggle the overlay class
 }
 
 
