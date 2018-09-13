@@ -30,12 +30,48 @@ footer sub{
     color: #fff;
 }
 
+.header-sticky{
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    max-width: 100%;
+    width: 100%;
+    z-index: 10;
+    height: 100px;
+    display: flex;
+    /* align-content: center;s */
+}
+
+.header-sticky-blurry{
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+    background: url('/img/180913-swag-banner-1.jpg');
+    position: absolute;
+    max-width: 100%;
+    width: 100%;
+    height: 100px;
+    z-index: 1;
+}
+
+.header-sticky h1{
+    color: #fff;
+}
+
+.header-sticky img{
+    padding: 15px;
+    width: 8%;
+    align-self: center;
+    
+}
+
 /* main navigation styling  */
 .button-container{ 
     height: 35px;
     width: 35px;    
     position: fixed;
-    top: 2%;
+    top: 4%;
     right: 2%;  
     cursor: pointer;
     z-index: 100;
@@ -43,8 +79,8 @@ footer sub{
 }
 
 .button-container span{
-    background: pink;
-    height: 5px;
+    background: #fff;
+    height: 3px;
     width: 100%;
     position: absolute;
     top: 0;
@@ -92,13 +128,13 @@ ul{
 
 .overlay{
     position: fixed;
-    background: pink;
+    background: #000;
     width: 100%;
     top: 0;
     left: 0;
     height: 0%;
     transition: .3s all ease-in-out;
-    z-index: 99;
+    z-index: 12;
     visibility: hidden;
     overflow: hidden;
 }
@@ -127,6 +163,11 @@ ul{
 .overlay ul li {
     position: relative;
     opacity: 0;
+}
+
+.overlay ul li a{
+    color: #fff;
+    text-decoration: none;
 }
 
 .overlay.open li {
@@ -159,10 +200,11 @@ animation-delay: .35s;
 }
 
 .hero-image{
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/img/180910-banner-image.jpg');
-    height: 520px;
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/img/180913-swag-banner-1.jpg'); */
+    background: url('/img/180913-swag-banner-1.jpg');
+    height: 620px;
     overflow: hidden;
-    background-size: contain;
+    background-size: cover;
 }
 
 .hero-image h1{
