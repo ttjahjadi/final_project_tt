@@ -64,24 +64,25 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
-    const firstDot = document.querySelector('.featured-circle');
-    const secondDot = document.querySelector('second-dot');
-    const thirdDot = document.querySelector('third-dot');
-    const fourthDot = document.querySelector('fourth-dot');
-    const map1 = document.querySelector('#map-1');
-    const map2 = document.querySelector('#map-2');
-    const map3 = document.querySelector('#map-3');
-    const map4 = document.querySelector('#map-4');
+    //Hover function on the pizza map
+    // const firstDot = document.querySelector('.featured-circle');
+    // const secondDot = document.querySelector('second-dot');
+    // const thirdDot = document.querySelector('third-dot');
+    // const fourthDot = document.querySelector('fourth-dot');
+    // const map1 = document.querySelector('#map-1');
+    // const map2 = document.querySelector('#map-2');
+    // const map3 = document.querySelector('#map-3');
+    // const map4 = document.querySelector('#map-4');
 
-    firstDot.addEventListener('mouseover', function (e) { //check for an event hover
-        e.preventDefault();
-        map1.classList.toggle('faded');
+    // firstDot.addEventListener('mouseover', function (e) { //check for an event hover
+    //     e.preventDefault();
+    //     map1.classList.toggle('faded');
 
-     // reset the color after a short delay
-    setTimeout(function() {
-        map1.classList.toggle('faded');
-      }, 500);
-    }, false);
+    //  // reset the color after a short delay
+    // setTimeout(function() {
+    //     map1.classList.toggle('faded');
+    //   }, 500);
+    // }, false);
 
     
  })
@@ -131,6 +132,35 @@ $(document).ready(function () {
         $(target).fadeIn(600);
         
     });
+
+    //Pizza map hover functions and effects
+
+    // $('.featured-circle').click(function () {
+    //         // over
+    //         $('#map-1').toggleClass('faded');
+    //     // }, function () {
+    //     //     // out
+    //     // }
+    // );
+
+// var distance0 = $('.erlyn-design').offset().top;
+// $(window).on ('scroll', function() {
+//     if ($(this).scrollTop() > distance0) {
+//         $('.position1').fadeIn("slow");
+//         $('.position2').fadeIn("slow");
+//         $('.position3').fadeIn("slow");
+//         $('.position4').fadeIn("slow");
+//     } else {
+//         $('.feature-circle').fadeOut("slow");
+//     }
+// });
+
+
+
+$('.featured-circle').hover( function () {
+	$('#map-1').toggleClass('faded');
+});
+
 
     
 });
