@@ -9,27 +9,27 @@ function clickNav() {
 //Wait till document loads before running the script
 document.addEventListener('DOMContentLoaded', function () {
     //Listen for a click event on chinese
-    document.querySelector('#chinese').addEventListener('click', function (e) {
+    document.querySelector('#asian').addEventListener('click', function (e) {
         e.preventDefault();
-        getChinese = document.querySelector('.chinese');
+        getChinese = document.querySelector('.asian');
         getChinese.classList.toggle('hidden');
     })
      //Listen for a click event on pizza & pasta
-    document.querySelector('#pizza-pasta').addEventListener('click', function (e) {
+    document.querySelector('#italian').addEventListener('click', function (e) {
         e.preventDefault();
-        getPizzaPasta = document.querySelector('.pizza-pasta');
+        getPizzaPasta = document.querySelector('.italian');
         getPizzaPasta.classList.toggle('hidden');
     })
     //Listen for a click event on burger
-    document.querySelector('#burger').addEventListener('click', function (e) {
+    document.querySelector('#japanese').addEventListener('click', function (e) {
         e.preventDefault();
-        getBurger = document.querySelector('.burger');
+        getBurger = document.querySelector('.japanese');
         getBurger.classList.toggle('hidden');
     })
     //Listen for a click event on vietnamese
-    document.querySelector('#vietnamese').addEventListener('click', function (e) {
+    document.querySelector('#burger').addEventListener('click', function (e) {
         e.preventDefault();
-        getVietnamese = document.querySelector('.vietnamese');
+        getVietnamese = document.querySelector('.burger');
         getVietnamese.classList.toggle('hidden');
     })
     //Listen for a click event on cafe
@@ -47,6 +47,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Get the navbar
     const navbar = document.querySelector("#sub-nav");
 
+    //Get the sticky header
+    const stickyHeader = document.querySelector('.header-sticky');
     // Get the offset position of the navbar
     const sticky = navbar.offsetTop - 100;
 
@@ -54,11 +56,34 @@ document.addEventListener('DOMContentLoaded', function () {
     function scrollSubNav() {
       if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky")
-        
+        stickyHeader.style.background = 'rgb(0, 0, 0, 0.9)';
+
       } else {
         navbar.classList.remove("sticky");
+        stickyHeader.style.background = 'rgb(0, 0, 0, 0.5)';
       }
     }
+
+    const firstDot = document.querySelector('.featured-circle');
+    const secondDot = document.querySelector('second-dot');
+    const thirdDot = document.querySelector('third-dot');
+    const fourthDot = document.querySelector('fourth-dot');
+    const map1 = document.querySelector('#map-1');
+    const map2 = document.querySelector('#map-2');
+    const map3 = document.querySelector('#map-3');
+    const map4 = document.querySelector('#map-4');
+
+    firstDot.addEventListener('mouseover', function (e) { //check for an event hover
+        e.preventDefault();
+        map1.classList.toggle('faded');
+
+     // reset the color after a short delay
+    setTimeout(function() {
+        map1.classList.toggle('faded');
+      }, 500);
+    }, false);
+
+    
  })
 
 $(document).ready(function () {
