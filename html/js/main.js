@@ -8,36 +8,6 @@ function clickNav() {
 
 //Wait till document loads before running the script
 document.addEventListener('DOMContentLoaded', function () {
-    //Listen for a click event on chinese
-    document.querySelector('#asian').addEventListener('click', function (e) {
-        e.preventDefault();
-        getChinese = document.querySelector('.asian');
-        getChinese.classList.toggle('hidden');
-    })
-     //Listen for a click event on pizza & pasta
-    document.querySelector('#italian').addEventListener('click', function (e) {
-        e.preventDefault();
-        getPizzaPasta = document.querySelector('.italian');
-        getPizzaPasta.classList.toggle('hidden');
-    })
-    //Listen for a click event on burger
-    document.querySelector('#japanese').addEventListener('click', function (e) {
-        e.preventDefault();
-        getBurger = document.querySelector('.japanese');
-        getBurger.classList.toggle('hidden');
-    })
-    //Listen for a click event on vietnamese
-    document.querySelector('#burger').addEventListener('click', function (e) {
-        e.preventDefault();
-        getVietnamese = document.querySelector('.burger');
-        getVietnamese.classList.toggle('hidden');
-    })
-    //Listen for a click event on cafe
-    document.querySelector('#cafe').addEventListener('click', function (e) {
-        e.preventDefault();
-        getCafe = document.querySelector('.cafe');
-        getCafe.classList.toggle('hidden');
-    })
 
     // When the user scrolls the page, execute myFunction 
     window.onscroll = function() {
@@ -54,15 +24,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
     function scrollSubNav() {
-      if (window.pageYOffset >= sticky) {
+    if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky")
         stickyHeader.style.background = 'rgb(0, 0, 0, 0.9)';
 
-      } else {
+    } else {
         navbar.classList.remove("sticky");
         stickyHeader.style.background = 'rgb(0, 0, 0, 0.5)';
-      }
     }
+    }
+
+    //Get the circle box div
+    const circleBox = document.querySelector('.circle-box');
+
+    //Listen for a click event on chinese
+    document.querySelector('#asian').addEventListener('click', function (e) {
+        e.preventDefault();
+        const getChinese = document.querySelector('.asian');
+        getChinese.classList.toggle('hidden');
+        e.classList.toggle('activate-filter');
+    })
+     //Listen for a click event on pizza & pasta
+    document.querySelector('#japanese').addEventListener('click', function (e) {
+        e.preventDefault();
+        const getPizzaPasta = document.querySelector('.japanese');
+        getPizzaPasta.classList.toggle('hidden');
+        circleBox.classList.toggle('activate-filter');
+    })
+    //Listen for a click event on burger
+    document.querySelector('#italian').addEventListener('click', function (e) {
+        e.preventDefault();
+        const getBurger = document.querySelector('.italian');
+        getBurger.classList.toggle('hidden');
+    })
+    //Listen for a click event on vietnamese
+    document.querySelector('#burger').addEventListener('click', function (e) {
+        e.preventDefault();
+        const getVietnamese = document.querySelector('.burger');
+        getVietnamese.classList.toggle('hidden');
+    })
+    //Listen for a click event on cafe
+    document.querySelector('#cafe').addEventListener('click', function (e) {
+        e.preventDefault();
+        const getCafe = document.querySelector('.cafe');
+        getCafe.classList.toggle('hidden');
+    })
+
+
 
     //Hover function on the pizza map
     // const firstDot = document.querySelector('.featured-circle');
@@ -84,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //   }, 500);
     // }, false);
 
-    
  })
 
 $(document).ready(function () {
@@ -135,32 +142,19 @@ $(document).ready(function () {
 
     //Pizza map hover functions and effects
 
-    // $('.featured-circle').click(function () {
-    //         // over
-    //         $('#map-1').toggleClass('faded');
-    //     // }, function () {
-    //     //     // out
-    //     // }
-    // );
+    $('.first-dot').hover( function () {
+        $('#map-1').toggleClass('faded');
+    });
 
-// var distance0 = $('.erlyn-design').offset().top;
-// $(window).on ('scroll', function() {
-//     if ($(this).scrollTop() > distance0) {
-//         $('.position1').fadeIn("slow");
-//         $('.position2').fadeIn("slow");
-//         $('.position3').fadeIn("slow");
-//         $('.position4').fadeIn("slow");
-//     } else {
-//         $('.feature-circle').fadeOut("slow");
-//     }
-// });
-
-
-
-$('.featured-circle').hover( function () {
-	$('#map-1').toggleClass('faded');
-});
-
-
+    $('.second-dot').hover( function () {
+        $('#map-2').toggleClass('faded');
+    });
     
+    $('.third-dot').hover( function () {
+        $('#map-3').toggleClass('faded');
+    });
+    
+    $('.fourth-dot').hover( function () {
+        $('#map-4').toggleClass('faded');
+    });
 });
