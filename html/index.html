@@ -6,7 +6,6 @@
     <title>Swag Eats | Good Food Guidance For Your Belly</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     <link rel="shortcut icon" type="image/png" href="/img/favicon.ico"/>
@@ -95,58 +94,63 @@
                 <h2>Heading 2</h2>
                 <h4>Heading 4</h4>
                 <div class="cuisine-list">
-                    <a href="" id="asian">
-                        <figure class="cuisine-box">
-                            <div class="circle-box activate-filter">
-                                <img src="/img/180915-ramen-noodle.png" alt="Ramen bowl">
-                            </div>
-                            <span>Asian</span>
-                        </figure>
-                    </a>
+                    <figure class="cuisine-box activate-filter" id="asian">
+                        <div class="circle-box">
+                            <img src="/img/180915-ramen-noodle.png" alt="Ramen bowl">
+                        </div>
+                        <span>Asian</span>
+                    </figure>
 
-                    <a href="" id="japanese">
-                        <figure class="cuisine-box">
-                            <div class="circle-box activate-filter">
-                                <img src="/img/180915-sushi-prawn.png" alt="Sushi nigiri">
-                            </div>
-                            <span>Japanese</span>
-                        </figure>
-                    </a>
+                    <figure class="cuisine-box activate-filter" id="japanese">
+                        <div class="circle-box">
+                            <img src="/img/180915-sushi-prawn.png" alt="Sushi nigiri">
+                        </div>
+                        <span>Japanese</span>
+                    </figure>
+                
 
-                    <a href="" id="italian">
-                        <figure class="cuisine-box">
-                            <div class="circle-box activate-filter">
-                                <img src="/img/180915-pizza.png" alt="Pizza">
-                            </div>
-                            <span>Italian</span>
-                        </figure>
-                    </a>
+                    <figure class="cuisine-box activate-filter" id="italian">
+                        <div class="circle-box">
+                            <img src="/img/180915-pizza.png" alt="Pizza">
+                        </div>
+                        <span>Italian</span>
+                    </figure>
 
-                    <a href="" id="burger">
-                        <figure class="cuisine-box">
-                            <div class="circle-box activate-filter">
-                                <img src="/img/180915-burger.png" alt="Burger">
-                            </div>
-                            <span>Burger</span>
-                        </figure>
-                    </a>
+                    <figure class="cuisine-box activate-filter" id="burger">
+                        <div class="circle-box">
+                            <img src="/img/180915-burger.png" alt="Burger">
+                        </div>
+                        <span>Burger</span>
+                    </figure>
 
-                    <a href="" id="cafe">
-                        <figure class="cuisine-box">
-                            <div class="circle-box activate-filter">
-                                <img src="/img/180915-coffee-cup.png" alt="Coffee Cup">
-                            </div>
-                            <span>Cafe</span>
-                        </figure>
-                    </a>
+                    <figure class="cuisine-box activate-filter" id="cafe">
+                        <div class="circle-box">
+                            <img src="/img/180915-coffee-cup.png" alt="Coffee Cup">
+                        </div>
+                        <span>Cafe</span>
+                    </figure>
                 </div>
                 <!--Chinese-->
                 <article class="food-list asian hidden">
                     <div class="food-item">
                         <a href="#ex1" rel="modal:open"><img src="/img/180913-asian-food-bowl-cuisine.jpg" alt="Chinese Food 1"></a>
                         <div id="ex1" class="modal">
-                            <img src="/img/180913-asian-food-bowl-cuisine.jpg" alt="Chinese Food 1">
-                            <a href="#" rel="modal:close">Close</a>
+                            <article>
+                                <h3>Description Heading</h3>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non asperiores ipsam dolorem eius id ut quis iure pariatur alias, earum veritatis magni, nostrum adipisci dolores velit. Earum voluptatem sit quidem?</p>
+                                <div class="rating-box">
+                                    <p>Score</p>
+                                    <p class="star"></p>
+                                </div>
+                                <div class="add-to-list">
+                                    <p><span class="plus-icon"></span>Add to list</p>
+                                </div>
+                            </article>
+                            
+                            <div class="food-background">
+                                <img src="/img/180916-modal-test-image.jpg" alt="Chinese Food 1">
+                            </div>
+                            <!-- <a href="#" rel="modal:close">Close</a> -->
                         </div>
                     </div>
                     <div class="food-item">
@@ -370,9 +374,11 @@
         </footer>
     </div>
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,400i,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,700,700i|Roboto:100,100i,300,300i,400,400i,700,700i" rel="stylesheet">
     <!-- jQuery Modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 </body>
 </html>

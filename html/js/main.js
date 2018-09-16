@@ -34,34 +34,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     }
 
-    //Get the circle box div
-    const circleBox = document.querySelector('.circle-box');
-
     //Listen for a click event on chinese
     document.querySelector('#asian').addEventListener('click', function (e) {
         e.preventDefault();
         const getChinese = document.querySelector('.asian');
         getChinese.classList.toggle('hidden');
-        e.classList.toggle('activate-filter');
     })
-     //Listen for a click event on pizza & pasta
+     //Listen for a click event on japanese
     document.querySelector('#japanese').addEventListener('click', function (e) {
         e.preventDefault();
-        const getPizzaPasta = document.querySelector('.japanese');
-        getPizzaPasta.classList.toggle('hidden');
-        circleBox.classList.toggle('activate-filter');
+        const getJapanese = document.querySelector('.japanese');
+        getJapanese.classList.toggle('hidden');
     })
-    //Listen for a click event on burger
+    //Listen for a click event on italian
     document.querySelector('#italian').addEventListener('click', function (e) {
         e.preventDefault();
-        const getBurger = document.querySelector('.italian');
-        getBurger.classList.toggle('hidden');
+        const getItalian = document.querySelector('.italian');
+        getItalian.classList.toggle('hidden');
     })
-    //Listen for a click event on vietnamese
+    //Listen for a click event on burger
     document.querySelector('#burger').addEventListener('click', function (e) {
         e.preventDefault();
-        const getVietnamese = document.querySelector('.burger');
-        getVietnamese.classList.toggle('hidden');
+        const getBurger = document.querySelector('.burger');
+        getBurger.classList.toggle('hidden');
     })
     //Listen for a click event on cafe
     document.querySelector('#cafe').addEventListener('click', function (e) {
@@ -69,6 +64,33 @@ document.addEventListener('DOMContentLoaded', function () {
         const getCafe = document.querySelector('.cafe');
         getCafe.classList.toggle('hidden');
     })
+
+
+    //Get all the cuisine box class name
+    const cuisineBox = document.getElementsByClassName('cuisine-box');
+    for (var i = 0; i < cuisineBox.length; i++) { //Using a for loop to count how many class are there in the DOM
+        cuisineBox[i].addEventListener('click', foodHidden, false); //listens for a click function of each arrays
+    }
+
+    function foodHidden(e) { 
+        e.preventDefault();
+        const circleBox = this.querySelector('.circle-box'); //Get the selected circle box from a click listener
+
+        // const foodList = document.getElementsByClassName('food-list');
+
+        // circleBox.classList.toggle('activate-filter'); //Toggle activated filter
+        this.classList.toggle('activate-filter');
+
+        // for (var i = 0; i < foodList.length; i++) {
+        //     foodList[i].addEventListener('click', showFood, false);
+        // }
+
+        // function showFood(e) { 
+        //     e.preventDefault();
+        //     const food = document.querySelector('.food-List');
+        //     food.classList.toggle('hidden');
+        //  }
+     }
 
 
 
