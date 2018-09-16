@@ -34,48 +34,51 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     }
 
-    //Listen for a click event on chinese
-    document.querySelector('#asian').addEventListener('click', function (e) {
-        e.preventDefault();
-        const getChinese = document.querySelector('.asian');
-        getChinese.classList.toggle('hidden');
-    })
-     //Listen for a click event on japanese
-    document.querySelector('#japanese').addEventListener('click', function (e) {
-        e.preventDefault();
-        const getJapanese = document.querySelector('.japanese');
-        getJapanese.classList.toggle('hidden');
-    })
-    //Listen for a click event on italian
-    document.querySelector('#italian').addEventListener('click', function (e) {
-        e.preventDefault();
-        const getItalian = document.querySelector('.italian');
-        getItalian.classList.toggle('hidden');
-    })
-    //Listen for a click event on burger
-    document.querySelector('#burger').addEventListener('click', function (e) {
-        e.preventDefault();
-        const getBurger = document.querySelector('.burger');
-        getBurger.classList.toggle('hidden');
-    })
-    //Listen for a click event on cafe
-    document.querySelector('#cafe').addEventListener('click', function (e) {
-        e.preventDefault();
-        const getCafe = document.querySelector('.cafe');
-        getCafe.classList.toggle('hidden');
-    })
+    // //Listen for a click event on chinese
+    // document.querySelector('#asian').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     const getChinese = document.querySelector('.asian');
+    //     getChinese.classList.toggle('hidden');
+    // })
+    //  //Listen for a click event on japanese
+    // document.querySelector('#japanese').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     const getJapanese = document.querySelector('.japanese');
+    //     getJapanese.classList.toggle('hidden');
+    // })
+    // //Listen for a click event on italian
+    // document.querySelector('#italian').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     const getItalian = document.querySelector('.italian');
+    //     getItalian.classList.toggle('hidden');
+    // })
+    // //Listen for a click event on burger
+    // document.querySelector('#burger').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     const getBurger = document.querySelector('.burger');
+    //     getBurger.classList.toggle('hidden');
+    // })
+    // //Listen for a click event on cafe
+    // document.querySelector('#cafe').addEventListener('click', function (e) {
+    //     e.preventDefault();
+    //     const getCafe = document.querySelector('.cafe');
+    //     getCafe.classList.toggle('hidden');
+    // })
 
 
     //Get all the cuisine box class name
-    const cuisineBox = document.getElementsByClassName('cuisine-box');
-    for (var i = 0; i < cuisineBox.length; i++) { //Using a for loop to count how many class are there in the DOM
-        cuisineBox[i].addEventListener('click', foodHidden, false); //listens for a click function of each arrays
+    const cuisine = document.getElementsByClassName('cuisine-box');
+    console.log(cuisine);
+    for (var i = 0; i < cuisine.length; i++) { //Using a for loop to count how many class are there in the DOM
+        cuisine[i].addEventListener('click', foodHidden, false); //listens for a click function of each array
     }
 
     function foodHidden(e) { 
         e.preventDefault();
+        var iconID = this.getAttribute('data-id'); //Get data id atrribute
+        console.log(iconID);
         const circleBox = this.querySelector('.circle-box'); //Get the selected circle box from a click listener
-
+        const cuisineBox = this.querySelector('.cuisine-box');
         // const foodList = document.getElementsByClassName('food-list');
 
         // circleBox.classList.toggle('activate-filter'); //Toggle activated filter
@@ -91,6 +94,15 @@ document.addEventListener('DOMContentLoaded', function () {
         //     food.classList.toggle('hidden');
         //  }
      }
+
+    //  $('.cuisine-box').on('click', function() {
+    //     var iconID = $(this).attr('data-id');
+    //     console.log(iconID);
+    // })
+
+
+
+
 
 
 
@@ -179,4 +191,6 @@ $(document).ready(function () {
     $('.fourth-dot').hover( function () {
         $('#map-4').toggleClass('faded');
     });
+    
+
 });
