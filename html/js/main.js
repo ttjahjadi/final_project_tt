@@ -69,21 +69,66 @@ document.addEventListener('DOMContentLoaded', function () {
     //Get all the cuisine box class name
     const cuisine = document.getElementsByClassName('cuisine-box');
     console.log(cuisine);
+    
     for (var i = 0; i < cuisine.length; i++) { //Using a for loop to count how many class are there in the DOM
+        
         cuisine[i].addEventListener('click', foodHidden, false); //listens for a click function of each array
+         
+        // cuisine[i].addEventListener('click', reset, false);
+
     }
+
+    
+    // function reset(e) {
+    //     const containFilter = this.classList.contains('activate-filter')
+    //     console.log(containFilter);
+
+        
+    //     if(cuisine[e] != containFilter){
+    //         this.classList.remove('activate-filter');
+    //     } else if (cuisine[e] === containFilter){
+    //         this.classList.add('activate-filter');
+    //     }
+
+    //     const containFilter = this.classList.contains('activate-filter')
+    //     const containHidden = document.querySelector('.food-list').classList.contains('hidden')
+        
+    //     console.log(containHidden);
+        
+    //     if(prev[e] != containHidden){
+    //         containHidden.classList.add('activate-filter');
+    //     } else if (prev[e] === containHidden){
+            
+    //         console.log('there is a class')
+    //     }
+        
+    // }
+
 
     function foodHidden(e) { 
         e.preventDefault();
-        var iconID = this.getAttribute('data-id'); //Get data id atrribute
-        console.log(iconID);
+
         const circleBox = this.querySelector('.circle-box'); //Get the selected circle box from a click listener
         const cuisineBox = this.querySelector('.cuisine-box');
         // const foodList = document.getElementsByClassName('food-list');
 
         // circleBox.classList.toggle('activate-filter'); //Toggle activated filter
+        // .not(this).removeClass('active')
         this.classList.toggle('activate-filter');
 
+        var iconID = this.getAttribute('data-id'); //Get data id atrribute
+        console.log(iconID);
+        const showFood = document.querySelectorAll('#food-' + iconID);
+        // console.log(showFood);
+        const showfooFood = document.querySelector('#food-' + iconID).classList.toggle('hidden');
+
+        const prev = document.querySelector('#food-'+ iconID).previousElementSibling; // #foo1
+        console.log(prev);
+
+        const next = document.querySelector('#food-'+ iconID).nextElementSibling; // #foo3
+        console.log(next);
+
+        
         // for (var i = 0; i < foodList.length; i++) {
         //     foodList[i].addEventListener('click', showFood, false);
         // }
@@ -92,19 +137,28 @@ document.addEventListener('DOMContentLoaded', function () {
         //     e.preventDefault();
         //     const food = document.querySelector('.food-List');
         //     food.classList.toggle('hidden');
-        //  }
+        //  
+
+        // var getSiblings = function (elem) {
+        //     var siblings = [];
+        //     var sibling = elem.parentNode.firstChild;
+    
+        //     for (; sibling; sibling = sibling.nextSibling) {
+        //         if (sibling.nodeType !== 1 || sibling === elem) continue;
+        //     siblings.push(sibling);
+        //     }
+    
+        //     return siblings;
+        // };
+    
+        // var elem = document.querySelector('#description-' + iconID);
+        // var siblings = getSiblings(elem);
+        // console.log(siblings);
+
      }
 
-    //  $('.cuisine-box').on('click', function() {
-    //     var iconID = $(this).attr('data-id');
-    //     console.log(iconID);
-    // })
 
-
-
-
-
-
+    // $('#description-' + iconID).toggle().siblings().hide();
 
     //Hover function on the pizza map
     // const firstDot = document.querySelector('.featured-circle');
@@ -192,5 +246,4 @@ $(document).ready(function () {
         $('#map-4').toggleClass('faded');
     });
     
-
 });
