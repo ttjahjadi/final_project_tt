@@ -3,12 +3,16 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     <title>Swag Eats | Good Food Guidance For Your Belly</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="apple-mobile-web-app-title" content="Swag Eats" />
+    <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="css/normalize.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/main.js"></script>
     <link rel="shortcut icon" type="image/png" href="/img/favicon.ico"/>
+
 </head>
 <body>
     <div class="container">
@@ -55,6 +59,9 @@
             <!--Maps and features-->
             <section class="maps">
                 <div  class="section-left">
+                    <div class="mushroom-icon" id="mushroom">
+                        <img src="/img/180917-mushroom.png" alt="Mushroom">
+                    </div>
                     <div class="top-section-map faded" id="map-1">
                         <h3>Header Text</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus assumenda suscipit rem vel. Ab nulla dignissimos suscipit quam deserunt doloremque temporibus, reiciendis dolorem vero voluptas unde perferendis illum, porro ut.</p>
@@ -129,7 +136,7 @@
                         </div>
                         <span>Cafe</span>
                     </figure>
-                </div>
+                </div> -->
                 <!--Chinese-->
                 <article class="food-list hidden" id="food-1">
                     <div class="food-item">
@@ -138,19 +145,28 @@
                             <article>
                                 <h3>Description Heading</h3>
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non asperiores ipsam dolorem eius id ut quis iure pariatur alias, earum veritatis magni, nostrum adipisci dolores velit. Earum voluptatem sit quidem?</p>
-                                <div class="rating-box">
-                                    <p>Score</p>
-                                    <p class="star"></p>
-                                </div>
-                                <div class="add-to-list">
-                                    <p><span class="plus-icon"></span>Add to list</p>
+                                <div class="middle-container">
+                                    <div class="rating-box">
+                                        <p>Score</p>
+                                        <div class="line"></div>
+                                        <div class="rating-box">
+                                            <span class="rating-star full-star"></span>
+                                            <span class="rating-star full-star"></span>
+                                            <span class="rating-star full-star"></span>
+                                            <span class="rating-star full-star"></span>
+                                            <span class="rating-star empty-star"></span>
+                                        </div>
+                                    </div>
+                                    <div class="add-to-list">
+                                        <p><span class="plus-icon"></span>Add to list</p>
+                                    </div>
                                 </div>
                             </article>
                             
                             <div class="food-background">
                                 <img src="/img/180916-modal-test-image.jpg" alt="Chinese Food 1">
                             </div>
-                            <!-- <a href="#" rel="modal:close">Close</a> -->
+                            <a href="#" rel="modal:close">Close</a>
                         </div>
                     </div>
                     <div class="food-item">

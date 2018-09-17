@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Get the sticky header
     const stickyHeader = document.querySelector('.header-sticky');
+    // Get the sticky header img/logo
+    const stickyHeaderImg = document.querySelector('.header-sticky img');
     // Get the offset position of the navbar
     const sticky = navbar.offsetTop - 100;
 
@@ -27,10 +29,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (window.pageYOffset >= sticky) {
         navbar.classList.add("sticky")
         stickyHeader.style.background = 'rgb(0, 0, 0, 0.9)';
+        stickyHeaderImg.classList.add('fadeInDown', 'active');
 
     } else {
         navbar.classList.remove("sticky");
         stickyHeader.style.background = 'rgb(0, 0, 0, 0.5)';
+        stickyHeaderImg.classList.remove('fadeInDown', 'active');
     }
     }
 
@@ -117,16 +121,16 @@ document.addEventListener('DOMContentLoaded', function () {
         this.classList.toggle('activate-filter');
 
         var iconID = this.getAttribute('data-id'); //Get data id atrribute
-        console.log(iconID);
+        // console.log(iconID);
         const showFood = document.querySelectorAll('#food-' + iconID);
         // console.log(showFood);
         const showfooFood = document.querySelector('#food-' + iconID).classList.toggle('hidden');
 
         const prev = document.querySelector('#food-'+ iconID).previousElementSibling; // #foo1
-        console.log(prev);
+        // console.log(prev);
 
         const next = document.querySelector('#food-'+ iconID).nextElementSibling; // #foo3
-        console.log(next);
+        // console.log(next);
 
         
         // for (var i = 0; i < foodList.length; i++) {
@@ -244,6 +248,22 @@ $(document).ready(function () {
     
     $('.fourth-dot').hover( function () {
         $('#map-4').toggleClass('faded');
+    });
+
+    //Jquery method to add filter if it's not being selected
+    // $('.cuisine-box').click(function() { 
+    //     $('.cuisine-box').not(this).addClass('activate-filter')
+    //     // $(this).toggleClass('activate-filter')
+    //     // $('.food-list').addClass('hidden');
+    //     const sib = $('.food-list').siblings()
+    //     console.log(sib);
+    // })
+
+    $(window).scroll(function() {
+        var calculation = $(window).scrollTop() / $(document).height() * 1200
+        $('.mushroom-icon img').css('transform', 'translateY(' + calculation + 'px)')
+
+        // transform: translateY(200px);
     });
     
 });

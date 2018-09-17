@@ -16,26 +16,80 @@ body{
 h1{
     font-size: 3.2rem;
     font-family: 'Roboto', sans-serif;
+    transition: .3s all ease-in-out;
 }
 
 h2{
     font-size: 2.5rem;
     font-family: 'Roboto', sans-serif;
+    transition: .3s all ease-in-out;
 }
 
 h3{
     font-size: 2rem;
     font-family: 'Roboto', sans-serif;
+    transition: .3s all ease-in-out;
 }
 
 h4{
     font-size: 1.8rem;
     font-family: 'Roboto', sans-serif;
+    transition: .3s all ease-in-out;
 }
 
 p{
     font-size: 1rem;
     font-family: 'Muli', sans-serif;
+    transition: .3s all ease-in-out;
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    h1{
+        font-size: 2.2rem;
+    }
+
+    h2{
+        font-size: 1.8rem;
+        font-family: 'Roboto', sans-serif;
+        transition: .3s all ease-in-out;
+    }
+    
+    h3{
+        font-size: 1.6rem;
+        font-family: 'Roboto', sans-serif;
+        transition: .3s all ease-in-out;
+    }
+    
+    h4{
+        font-size: 1.3rem;
+        font-family: 'Roboto', sans-serif;
+        transition: .3s all ease-in-out;
+    }
+}
+
+@media (max-width : 767px){
+    h1{
+        font-size: 1.8rem;
+    }
+
+    h2{
+        font-size: 1.8rem;
+        font-family: 'Roboto', sans-serif;
+        transition: .3s all ease-in-out;
+    }
+    
+    h3{
+        font-size: 1.6rem;
+        font-family: 'Roboto', sans-serif;
+        transition: .3s all ease-in-out;
+    }
+    
+    h4{
+        font-size: 1.3rem;
+        font-family: 'Roboto', sans-serif;
+        transition: .3s all ease-in-out;
+    }
 }
 
 .container {
@@ -101,14 +155,80 @@ footer sub{
     color: #fff;
 }
 
+
+@-webkit-keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 100%, 0);
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+}
+  
+@-webkit-keyframes fadeInDown {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes fadeInDown {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+  
+  .fadeInDown {
+    -webkit-animation: fadeInDown .5s ease forwards;
+    animation: fadeInDown .5s ease forwards;
+  }
+
+.fadeInUp {
+    -webkit-animation: fadeInUp .5s ease forwards;
+    animation: fadeInUp .5s ease forwards;
+    /* -webkit-animation-delay: .35s;
+    animation-delay: .35s; */
+}
+
 .header-sticky img{
     padding: 15px;
-    width: 8%;
+    width: 0%;
     -ms-flex-item-align: center;
     -ms-grid-row-align: center;
     align-self: center;
-    
 }
+
+.header-sticky img.active{
+    width: 120px;
+}
+
+@media only screen  and (min-width : 940x) {
+    .header-sticky img.active{
+        width: 150px;
+    }
+}
+
+
 
 /* main navigation styling  */
 .button-container{ 
@@ -289,7 +409,7 @@ ul{
 .hero-image{
     /* background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/img/180913-swag-banner-1.jpg'); */
     background: url('/img/180913-swag-banner-1.jpg');
-    height: 620px;
+    height: 500px;
     overflow: hidden;
     background-size: cover;
     display: flex;
@@ -305,12 +425,25 @@ ul{
 .hero-image img{
     /* width: 20%; */
     padding-top: 3em;
+    transition: .3s all ease-in-out;
 }
 
 /* Large screens ----------- */
 @media only screen  and (min-width : 1824px) {
     .hero-image img{
         width: 15%;
+    }
+}
+
+@media only screen  and (min-width : 800px) {
+    .hero-image {
+        height: 620px;
+    }
+}
+
+@media only screen  and (max-width : 767px) {
+    .hero-image img{
+        width: 50%;
     }
 }
 
@@ -325,8 +458,9 @@ ul{
     -webkit-box-pack: space-evenly;
     -ms-flex-pack: space-evenly;
     justify-content: space-evenly;
-    max-width: 100%;
+    max-width: 65%;
     height: 100px;
+    margin: 0 auto;
 }
 
 .sub-nav ul li{
@@ -370,6 +504,29 @@ ul{
     opacity: 1;
 }
 
+@media only screen  and (min-width : 1224px) {
+    .sub-nav ul li a{
+        font-size: 1rem;
+    }
+}
+
+@media only screen  and (min-width : 810px) {
+    .sub-nav ul{
+        max-width: 100%;
+    }
+}
+
+@media only screen  and (min-width : 400px) {
+    .sub-nav ul li a{
+        font-size: .8rem;
+    }
+}
+
+@media only screen and (max-width : 539px){
+    .sub-nav ul{
+        display: none;
+    }
+}
 
 /* Maps styling */
 
@@ -381,9 +538,10 @@ ul{
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    margin-top: 6.375em;
+    margin-top: 1.375em;
     max-width: 100%;
-    padding: 4em 0 4em 0;
+    padding: 2em 0 4em 0;
+    position: relative;
 }
 
 .maps h3{
@@ -533,6 +691,25 @@ to {
 
 .maps .faded{
     opacity: .3;
+}
+
+.mushroom-icon img{
+    position: absolute;
+    top: -48%;
+    right: 10%;
+}
+
+@media only screen  and (max-width : 699px) {
+    .mushroom-icon{
+        display: none;
+    }
+}
+
+@media only screen  and (min-width : 768px) {
+    .maps{
+        margin-top: 6.375em;
+        padding: 4em 0 4em 0;
+    }
 }
 
 /* Food styling */
@@ -696,13 +873,19 @@ to {
     font-weight: 100;
 }
 
-.modal article .rating-box{
+.middle-container{
+    display: flex;
+    flex-direction: row;
     padding-top: 80px;
+}
+
+.modal article .rating-box{
     width: 50%;
 }
 
 .add-to-list{
     width: 50%;
+    text-align: right;
 }
 
 .food-background {
@@ -710,6 +893,62 @@ to {
     bottom: 0;
 }
 
+
+/* Star styling */
+
+.rating-box {
+    color: #535151;
+}
+
+.rating-box .line{
+    height: 3px;
+    background: #535151;
+    width: 36%;
+    margin-bottom: 9px;
+}
+  
+.rating-star {
+font-size: 1.6rem;
+width: 2rem;
+height: 2rem;
+padding: 0 1rem;
+position: relative;
+display: block;
+float: left;
+}
+
+.full-star:before {
+color: #ffffff;
+content: "\2605";
+position: absolute;
+left: 0;
+overflow: hidden;
+}
+
+.empty-star:before {
+content: "\2605";
+position: absolute;
+left: 0;
+overflow: hidden;
+}
+
+.half-star:before {
+color: #ffffff;
+content: "\2605";
+width: 50%;
+position: absolute;
+left: 0;
+overflow: hidden;
+}
+
+.half-star:after {
+content: '\2605';
+position: absolute;
+left: 1.5rem;
+width: 50%;
+text-indent: -1.5rem;
+overflow: hidden;
+}
 
 
 /* Form styling */
