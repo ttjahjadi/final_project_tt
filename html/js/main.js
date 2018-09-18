@@ -261,9 +261,11 @@ $(document).ready(function () {
     // })
 
     $(window).scroll(function() {
-        var calculation = $(window).scrollTop() / $(document).height() * 720
-        $('.mushroom-icon img').css('transform', 'rotate(' + calculation + 'deg)')
-        $('.mushroom-icon').css('transform', 'translateY(' + calculation + 'px)')
+        const calculation = $(window).scrollTop() / $(document).height() * 720
+        const calculationNegative = $(window).scrollTop() / $(document).height() * 720
+        $('.mushroom-icon img, .cheese-icon img, .tomato-icon img, .salami-icon img').css('transform', 'rotate(' + calculation + 'deg)')
+        $('.mushroom-icon, .tomato-icon').css('transform', 'translateY(' + calculation + 'px)')
+        $('.cheese-icon, .salami-icon').css('transform', 'translateY(' +- calculationNegative + 'px)')
 
         // transform: translateY(200px);
     });
