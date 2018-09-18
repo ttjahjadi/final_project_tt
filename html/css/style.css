@@ -1224,7 +1224,7 @@ input:hover[type="submit"]{
 
 footer{
     background: #db524e;
-    height: 30vh;
+    height: 20vh;
     padding: 0 20px 0 20px;
     display: flex;
     justify-content: flex-start;

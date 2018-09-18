@@ -78,73 +78,40 @@ document.addEventListener('DOMContentLoaded', function () {
         // cuisine[i].classList.remove('activate-filter');
         cuisine[i].addEventListener('click', foodHidden, false); //listens for a click function of each array
 
-        // cuisine[i].addEventListener('click', reset, false);
-        // if(cuisine[i].classList.contains('activate-filter')){
-        //     console.log('yay')
-        //     this.addEventListener('click', function () { 
-        //         // debugger
-        //         console.log(this.cuisine)
-        //      })
-        // } 
-        
 
     }
-
-    
-
-    
-    // function reset(e) {
-    //     const containFilter = this.classList.contains('activate-filter')
-    //     console.log(containFilter);
-
-        
-    //     if(cuisine[e] != containFilter){
-    //         this.classList.remove('activate-filter');
-    //     } else if (cuisine[e] === containFilter){
-    //         this.classList.add('activate-filter');
-    //     }
-
-    //     const containFilter = this.classList.contains('activate-filter')
-    //     const containHidden = document.querySelector('.food-list').classList.contains('hidden')
-        
-    //     console.log(containHidden);
-        
-    //     if(prev[e] != containHidden){
-    //         containHidden.classList.add('activate-filter');
-    //     } else if (prev[e] === containHidden){
-            
-    //         console.log('there is a class')
-    //     }
-        
-    // }
-
 
     function foodHidden(e) { 
         e.preventDefault();
 
         const circleBox = this.querySelector('.circle-box'); //Get the selected circle box from a click listener
-        const cuisineBox = this.querySelector('.cuisine-box');
-        // const foodList = document.getElementsByClassName('food-list');
-
+        const cuisineBox = this.querySelector('.cuisine-box');//Get the selected cuisine box from a click listener
+        const containFilter = this.classList.contains('activate-filter');
+        console.log(containFilter)
         document.querySelectorAll('.cuisine-list figure').forEach(function(figure) {
+            //Do a for each loop to check for figure and add the activate filter if it doesn't have it
             figure.classList.add('activate-filter')
         })
-        this.classList.remove('activate-filter');
+        this.classList.remove('activate-filter'); //Remove the class when the DOM listens for the click
 
-        var iconID = this.getAttribute('data-id'); //Get data id atrribute
+
+        const iconID = this.getAttribute('data-id'); //Get data id atrribute
         // console.log(iconID);
         const showFood = document.querySelector('#food-' + iconID);
         // console.log(showFood);
         // document.querySelector('#food-' + iconID).classList.toggle('hidden');
-        
 
-        
 
         document.querySelectorAll('article').forEach(function(article) {
             article.classList.add('hidden')
         })
 
         document.querySelector('#food-' + iconID).classList.remove('hidden');
+
+        if(containFilter === false){
+            this.classList.add('activate-filter');
+            document.querySelector('#food-' + iconID).classList.add('hidden');
+        }
 
 
 
