@@ -72,15 +72,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Get all the cuisine box class name
     const cuisine = document.getElementsByClassName('cuisine-box');
+    // const cuisine = document.getElementsByClassName('activate-filter');
     console.log(cuisine);
-    
     for (var i = 0; i < cuisine.length; i++) { //Using a for loop to count how many class are there in the DOM
-        
+        // cuisine[i].classList.remove('activate-filter');
         cuisine[i].addEventListener('click', foodHidden, false); //listens for a click function of each array
-         
+
         // cuisine[i].addEventListener('click', reset, false);
+        // if(cuisine[i].classList.contains('activate-filter')){
+        //     console.log('yay')
+        //     this.addEventListener('click', function () { 
+        //         // debugger
+        //         console.log(this.cuisine)
+        //      })
+        // } 
+        
 
     }
+
+    
 
     
     // function reset(e) {
@@ -116,44 +126,35 @@ document.addEventListener('DOMContentLoaded', function () {
         const cuisineBox = this.querySelector('.cuisine-box');
         // const foodList = document.getElementsByClassName('food-list');
 
-        // circleBox.classList.toggle('activate-filter'); //Toggle activated filter
-        // .not(this).removeClass('active')
-        this.classList.toggle('activate-filter');
+        document.querySelectorAll('.cuisine-list figure').forEach(function(figure) {
+            figure.classList.add('activate-filter')
+        })
+        this.classList.remove('activate-filter');
 
         var iconID = this.getAttribute('data-id'); //Get data id atrribute
         // console.log(iconID);
-        const showFood = document.querySelectorAll('#food-' + iconID);
+        const showFood = document.querySelector('#food-' + iconID);
         // console.log(showFood);
-        const showfooFood = document.querySelector('#food-' + iconID).classList.toggle('hidden');
+        // document.querySelector('#food-' + iconID).classList.toggle('hidden');
+        
 
-        const prev = document.querySelector('#food-'+ iconID).previousElementSibling; // #foo1
+        
+
+        document.querySelectorAll('article').forEach(function(article) {
+            article.classList.add('hidden')
+        })
+
+        document.querySelector('#food-' + iconID).classList.remove('hidden');
+
+
+
+        // const prev = document.querySelector('#food-'+ iconID).previousElementSibling; // #foo1
         // console.log(prev);
 
-        const next = document.querySelector('#food-'+ iconID).nextElementSibling; // #foo3
+        // const next = document.querySelector('#food-'+ iconID).nextElementSibling; // #foo3
         // console.log(next);
 
         
-        // for (var i = 0; i < foodList.length; i++) {
-        //     foodList[i].addEventListener('click', showFood, false);
-        // }
-
-        // function showFood(e) { 
-        //     e.preventDefault();
-        //     const food = document.querySelector('.food-List');
-        //     food.classList.toggle('hidden');
-        //  
-
-        // var getSiblings = function (elem) {
-        //     var siblings = [];
-        //     var sibling = elem.parentNode.firstChild;
-    
-        //     for (; sibling; sibling = sibling.nextSibling) {
-        //         if (sibling.nodeType !== 1 || sibling === elem) continue;
-        //     siblings.push(sibling);
-        //     }
-    
-        //     return siblings;
-        // };
     
         // var elem = document.querySelector('#description-' + iconID);
         // var siblings = getSiblings(elem);
@@ -250,7 +251,7 @@ $(document).ready(function () {
         $('#map-4').toggleClass('faded');
     });
 
-    //Jquery method to add filter if it's not being selected
+    // Jquery method to add filter if it's not being selected
     // $('.cuisine-box').click(function() { 
     //     $('.cuisine-box').not(this).addClass('activate-filter')
     //     // $(this).toggleClass('activate-filter')
@@ -268,3 +269,6 @@ $(document).ready(function () {
     });
     
 });
+
+
+// menu change as you scroll down
