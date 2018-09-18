@@ -260,8 +260,9 @@ $(document).ready(function () {
     // })
 
     $(window).scroll(function() {
-        var calculation = $(window).scrollTop() / $(document).height() * 1200
-        $('.mushroom-icon img').css('transform', 'translateY(' + calculation + 'px)')
+        var calculation = $(window).scrollTop() / $(document).height() * 720
+        $('.mushroom-icon img').css('transform', 'rotate(' + calculation + 'deg)')
+        $('.mushroom-icon').css('transform', 'translateY(' + calculation + 'px)')
 
         // transform: translateY(200px);
     });
