@@ -713,14 +713,14 @@ ul {
 }
 
 .top-section-map {
-  margin-bottom: 90px;
+  margin-bottom: 150px;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
 .bottom-section-map {
-  margin-top: 90px;
+  margin-top: 150px;
 }
 
 .maps .section-middle img {
@@ -851,15 +851,46 @@ ul {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 3em;
 }
 
 .food-item {
-  margin: 0 10px 0 10px;
+  margin: 0 10px 20px 10px;
+  position: relative;
 }
 
 .food-item img {
   width: 300px;
   height: auto;
+}
+
+.food-item .content-overlay {
+  background: rgba(0,0,0,0.7);
+  position: absolute;
+  height: 99%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease-in-out 0s;
+  -moz-transition: all 0.4s ease-in-out 0s;
+  transition: all 0.4s ease-in-out 0s;
+}
+
+.food-item:hover .content-overlay {
+  opacity: .8;
+}
+
+.food-item .fas{
+  font-size: 30px;
+  color: #fff;
+  position: absolute;
+  top: 43%;
+  left: 44%;
 }
 
 .food-list.hidden {
@@ -1337,7 +1368,7 @@ footer {
   transition: 0.4s all ease-in-out;
 }
 
-.fab {
+footer .fab {
   font-size: 25px;
   color: #fff;
 }
