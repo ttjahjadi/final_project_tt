@@ -5,9 +5,9 @@ function clickNav() {
 }
 
 //Wait till document loads before running the script
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   // When the user scrolls the page, execute myFunction
-  window.onscroll = function() {
+  window.onscroll = function () {
     scrollSubNav();
   };
 
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const cuisineBox = this.querySelector(".cuisine-box"); //Get the selected cuisine box from a click listener
     const containFilter = this.classList.contains("activate-filter");
     console.log(containFilter);
-    document.querySelectorAll(".cuisine-list figure").forEach(function(figure) {
+    document.querySelectorAll("figure").forEach(function (figure) {
       //Do a for each loop to check for figure and add the activate filter if it doesn't have it
       figure.classList.add("activate-filter");
     });
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // console.log(showFood);
     // document.querySelector('#food-' + iconID).classList.toggle('hidden');
 
-    document.querySelectorAll("article").forEach(function(article) {
+    document.querySelectorAll("article").forEach(function (article) {
       article.classList.add("hidden");
     });
 
@@ -150,11 +150,11 @@ document.addEventListener("DOMContentLoaded", function() {
   // }, false);
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
   //Form Trigger Javascript
   $(".form")
     .find("input, textarea")
-    .on("keyup blur focus", function(e) {
+    .on("keyup blur focus", function (e) {
       var $this = $(this),
         label = $this.prev("label");
 
@@ -179,7 +179,7 @@ $(document).ready(function() {
       }
     });
 
-  $(".tab a").on("click", function(e) {
+  $(".tab a").on("click", function (e) {
     e.preventDefault();
 
     $(this)
@@ -201,19 +201,19 @@ $(document).ready(function() {
 
   //Pizza map hover functions and effects
 
-  $(".first-dot").hover(function() {
+  $(".first-dot").hover(function () {
     $("#map-1").toggleClass("faded");
   });
 
-  $(".second-dot").hover(function() {
+  $(".second-dot").hover(function () {
     $("#map-2").toggleClass("faded");
   });
 
-  $(".third-dot").hover(function() {
+  $(".third-dot").hover(function () {
     $("#map-3").toggleClass("faded");
   });
 
-  $(".fourth-dot").hover(function() {
+  $(".fourth-dot").hover(function () {
     $("#map-4").toggleClass("faded");
   });
 
@@ -226,7 +226,7 @@ $(document).ready(function() {
   //     console.log(sib);
   // })
 
-  $(window).scroll(function() {
+  $(window).scroll(function () {
     const calculation = ($(window).scrollTop() / $(document).height()) * 720;
     const calculationNegative =
       ($(window).scrollTop() / $(document).height()) * 720;

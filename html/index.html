@@ -49,15 +49,16 @@
             <div class="sub-nav" id="sub-nav">
                 <nav>
                     <ul>
-                        <li><a href="#" >Subnav 1</a></li>
-                        <li><a href="#">Subnav 2</a></li>
-                        <li><a href="#">Subnav 3</a></li>
-                        <li><a href="#">Subnav 4</a></li>
+                        <li><a href="#maps">About</a></li>
+                        <li><a href="#cuisine">Food</a></li>
+                        <li><a href="#form">Join Us</a></li>
+                        <!-- <li><a href="#">Subnav 4</a></li> -->
                     </ul>
                 </nav>
             </div>
             <!--Maps and features-->
-            <section class="maps" id="maps">
+            <div class="anchor" id="maps"></div>
+            <section class="maps" >
                 <div  class="section-left">
                     <!--Mushroom icon just rotating when page scroll-->
                     <div class="mushroom-icon" id="mushroom">
@@ -103,13 +104,52 @@
                 </div>
             </section>
             <!--Food Filter With Overlay-->
-            <section class="cuisine" id="cuisine">
+            <div class="anchor" id="cuisine"></div>
+            <section class="cuisine" >
                 <!--Tomato icon just rotating when page scroll-->
                 <div class="tomato-icon" id="cheese">
                     <img src="/img/180917-tomato.png" alt="Tomato">
                 </div>
                 <h2>Get ready cause your mouth is about to water</h2>
                 <h4>*Pick a Cuisine*</h4>  
+                <!--Display a carousel box when it hits 998px width-->                
+                <section class="regular slider">
+                    <figure class="cuisine-box activate-filter" data-id="1">
+                            <div class="circle-box">
+                                <img src="/img/180915-ramen-noodle.png" alt="Ramen bowl">
+                            </div>
+                            <span>Asian</span>
+                    </figure>
+
+                    <figure class="cuisine-box activate-filter" data-id="2" id="japanese">
+                        <div class="circle-box">
+                            <img src="/img/180915-sushi-prawn.png" alt="Sushi nigiri">
+                        </div>
+                        <span>Japanese</span>
+                    </figure>
+
+                    <figure class="cuisine-box activate-filter" data-id="3" id="italian">
+                        <div class="circle-box">
+                            <img src="/img/180915-pizza.png" alt="Pizza">
+                        </div>
+                        <span>Italian</span>
+                    </figure>
+
+                    <figure class="cuisine-box activate-filter" data-id="4" id="burger">
+                        <div class="circle-box" >
+                            <img src="/img/180915-burger.png" alt="Burger">
+                        </div>
+                        <span>Burger</span>
+                    </figure>
+
+                    <figure class="cuisine-box activate-filter" data-id="5" id="cafe">
+                        <div class="circle-box">
+                            <img src="/img/180915-coffee-cup.png" alt="Coffee Cup">
+                        </div>
+                        <span>Cafe</span>
+                    </figure>
+                </section>
+                <!--Display this layout when the width is larger than 998px-->    
                 <div class="cuisine-list">
                     <figure class="cuisine-box activate-filter" data-id="1">
                         <div class="circle-box">
@@ -1391,7 +1431,8 @@
                 </div>
             </section>
             <!--Subscribe Form-->
-            <section class="form" id="form">
+            <div class="anchor" id="form"></div>
+            <section class="form" >
                 <ul class="tab-group">
                     <li class="tab active"><a href="#signup">Sign Up</a></li>
                     <li class="tab"><a href="#login">Login</a></li>
@@ -1478,8 +1519,8 @@
                 </div>
                 <div class="footer-right">
                     <div class="social-media">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://www.instagram.com/tjahjadi10/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/taajjii" target=""><i class="fab fa-facebook-square"></i></a>
                     </div>
                     <div class="line"></div>
                 </div>
@@ -1494,7 +1535,54 @@
     <!-- jQuery Modal -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <!--Slick JS-->
+    
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <script src="js/slick.js"></script>
 
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".regular").slick({
+                dots: true,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            responsive: [
+                {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+                },
+                {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true
+                }
+                },
+                {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: true
+                }
+                }
+                // You can unslick at a given breakpoint now by adding:
+                // settings: "unslick"
+                // instead of a settings object
+            ]
+            });
+        });
+      </script>
 </body>
 </html>

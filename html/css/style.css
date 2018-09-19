@@ -267,10 +267,23 @@ footer sub {
   }
 }
 
-@media only screen and (max-width: 539px) {
+@media only screen and (max-width: 1000px) {
+  .header-sticky{
+    height: 70px;
+  }
+
+  .sub-nav ul{
+    height: 70px;
+  }
+
+  .header-sticky-blurry{
+    height: 70px;
+  }
+  
   .header-sticky img {
     width: 120px;
   }
+
 }
 
 /* main navigation styling  */
@@ -278,10 +291,11 @@ footer sub {
   height: 35px;
   width: 35px;
   position: fixed;
-  top: 4%;
+  top: 2%;
   right: 2%;
   cursor: pointer;
   z-index: 100;
+  display: none;
 }
 
 .button-container span {
@@ -569,7 +583,25 @@ ul {
   .sub-nav ul {
     display: none;
   }
+
+  .sub-nav ul li{
+    padding: 0.6rem 0;
+  }
+
+  .button-container{
+    display: block;
+  }
 }
+
+@media only screen and (max-width: 1000px) {
+
+  .sub-nav ul li{
+    padding: 0.6rem 0;
+  }
+
+}
+
+
 
 /* Maps styling */
 
@@ -793,9 +825,7 @@ ul {
 }
 
 .cuisine-list {
-  display: flex;
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  display: none;
   flex-direction: row;
   justify-content: center;
   flex: 1 0 0;
@@ -807,6 +837,8 @@ ul {
   flex-direction: column;
   max-width: 100%;
   cursor: pointer;
+  margin: 0;
+  align-items: center;
   transition: 0.3s all ease-in-out;
 }
 
@@ -859,11 +891,13 @@ ul {
 .food-item {
   margin: 0 10px 20px 10px;
   position: relative;
+  width: 40%;
 }
 
 .food-item img {
-  width: 300px;
+  width: 100%;
   height: auto;
+  border-radius: 8px;
 }
 
 .food-item .content-overlay {
@@ -907,6 +941,82 @@ ul {
   animation-duration: 400ms;
 }
 
+/* Slick Carousel New Styling */
+
+
+.slider {
+  width: 70%;
+  margin: 0px auto;
+}
+
+.slick-slide {
+margin: 0px 20px;
+}
+
+.slick-slide img {
+width: auto;
+align-self: center;
+}
+
+.slick-prev:before,
+.slick-next:before {
+color: #fff;
+}
+
+.slick-prev:before, .slick-next:before{
+  font-size: 30px;
+}
+
+.slick-dots li.slick-active button:before{
+  color: #ee2a2a;
+}
+
+.slick-dots li button:before{
+  font-size: 10px;
+  color: #fff;
+  opacity: .75;
+}
+
+
+.slick-slide {
+transition: all ease-in-out .3s;
+opacity: .2;
+}
+
+.slick-active {
+opacity: .8;
+}
+
+.slick-current {
+opacity: 1;
+}
+
+@media only screen and (min-width: 660px){
+  .food-item{
+    width: auto;
+  }
+
+  .food-item img{
+    width: 300px;
+    border-radius: none;
+  }
+}
+
+@media only screen and (min-width: 998px){
+  .cuisine-box{
+    margin: 16px 40px 16px 40px;
+  }
+  .regular{
+    display: none;
+  }
+
+  .cuisine-list{
+    display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+  }
+}
+
 /* Desktops and laptops ----------- */
 @media only screen and (min-width: 1224px) {
   .cuisine {
@@ -946,23 +1056,61 @@ p {
 
 .middle-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding-top: 80px;
 }
 
 .modal article .rating-box {
-  width: 50%;
+  width: 100%;
+}
+
+.modal a.close-modal{
+  background-image: url(/img/close.png);
 }
 
 .add-to-list {
-  width: 50%;
-  text-align: right;
+  width: 100%;
+  text-align: left;
 }
 
 .food-background {
   position: absolute;
   bottom: 0;
 }
+
+@media only screen  and (max-width : 550px) {
+  .modal{
+    height: 400px;
+  }
+
+  .food-background{
+    display: none;
+  }
+
+  .middle-container{
+    padding-top: 20px;
+  }
+
+  .modal article{
+    padding: 0 10px 0 10px;
+  }
+}
+
+@media only screen  and (min-width : 886px) {
+  .middle-container{
+    flex-direction: row;
+  }
+
+  .add-to-list{
+    width: 50%;
+    text-align: right;
+  }
+
+  .rating-box{
+    width: 50%;
+  }
+}
+  
 
 /* Desktops and laptops ----------- */
 @media only screen  and (min-width : 1224px) {
@@ -1390,6 +1538,8 @@ footer .fab {
   color: #fff;
 }
 
+
+
 @media only screen and (min-width: 1000px) {
   footer {
     padding: 0 70px 0 70px;
@@ -1404,3 +1554,34 @@ footer .fab {
     left: 15%;
   }
 }
+
+@media only screen and (max-width: 670px){
+  .footer-left{
+    width: 100%;
+  }
+  .footer-right{
+    width: 100%;
+  }
+
+  .footer-middle{
+    width: 100%;
+  }
+
+  .footer-middle img {
+    position: absolute;
+    bottom: 82%;
+    width:  60%;
+    right: 0;
+  }
+  
+}
+
+/* Styling to fix anhor issue */
+
+.anchor{
+  display: block;
+  height: 115px; /*same height as header*/
+  margin-top: -115px; /*same height as header*/
+  visibility: hidden;
+}
+
