@@ -919,8 +919,8 @@ ul {
 
 .modal {
   background: #262626;
-  max-width: 900px;
-  height: 800px;
+  max-width: 800px;
+  height: 630px;
   padding-left: 0;
   padding-right: 0;
   border-radius: 0;
@@ -962,6 +962,23 @@ p {
 .food-background {
   position: absolute;
   bottom: 0;
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+  .modal {
+    background: #262626;
+    max-width: 900px;
+    height: 800px;
+    padding-left: 0;
+    padding-right: 0;
+    border-radius: 0;
+  }
+}
+  
+/* Large screens ----------- */
+@media only screen  and (min-width : 1824px) {
+/* Styles */
 }
 
 /* Star styling */
