@@ -5,9 +5,9 @@ function clickNav() {
 }
 
 //Wait till document loads before running the script
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
   // When the user scrolls the page, execute myFunction
-  window.onscroll = function () {
+  window.onscroll = function() {
     scrollSubNav();
   };
 
@@ -45,55 +45,22 @@ document.addEventListener("DOMContentLoaded", function () {
     // }
   }
 
-  // //Listen for a click event on chinese
-  // document.querySelector('#asian').addEventListener('click', function (e) {
-  //     e.preventDefault();
-  //     const getChinese = document.querySelector('.asian');
-  //     getChinese.classList.toggle('hidden');
-  // })
-  //  //Listen for a click event on japanese
-  // document.querySelector('#japanese').addEventListener('click', function (e) {
-  //     e.preventDefault();
-  //     const getJapanese = document.querySelector('.japanese');
-  //     getJapanese.classList.toggle('hidden');
-  // })
-  // //Listen for a click event on italian
-  // document.querySelector('#italian').addEventListener('click', function (e) {
-  //     e.preventDefault();
-  //     const getItalian = document.querySelector('.italian');
-  //     getItalian.classList.toggle('hidden');
-  // })
-  // //Listen for a click event on burger
-  // document.querySelector('#burger').addEventListener('click', function (e) {
-  //     e.preventDefault();
-  //     const getBurger = document.querySelector('.burger');
-  //     getBurger.classList.toggle('hidden');
-  // })
-  // //Listen for a click event on cafe
-  // document.querySelector('#cafe').addEventListener('click', function (e) {
-  //     e.preventDefault();
-  //     const getCafe = document.querySelector('.cafe');
-  //     getCafe.classList.toggle('hidden');
-  // })
-
   //Get all the cuisine box class name
   const cuisine = document.getElementsByClassName("cuisine-box");
   // const cuisine = document.getElementsByClassName('activate-filter');
   console.log(cuisine);
   for (var i = 0; i < cuisine.length; i++) {
-    //Using a for loop to count how many class are there in the DOM
-    // cuisine[i].classList.remove('activate-filter');
     cuisine[i].addEventListener("click", foodHidden, false); //listens for a click function of each array
   }
 
   function foodHidden(e) {
-    e.preventDefault();
+    e.preventDefault(); //Precent from the default action
 
     const circleBox = this.querySelector(".circle-box"); //Get the selected circle box from a click listener
     const cuisineBox = this.querySelector(".cuisine-box"); //Get the selected cuisine box from a click listener
-    const containFilter = this.classList.contains("activate-filter");
-    console.log(containFilter);
-    document.querySelectorAll("figure").forEach(function (figure) {
+    const containFilter = this.classList.contains("activate-filter"); //Check if it contains activate-filter class
+    // console.log(containFilter);
+    document.querySelectorAll("figure").forEach(function(figure) {
       //Do a for each loop to check for figure and add the activate filter if it doesn't have it
       figure.classList.add("activate-filter");
     });
@@ -103,15 +70,16 @@ document.addEventListener("DOMContentLoaded", function () {
     // console.log(iconID);
     const showFood = document.querySelector("#food-" + iconID);
     // console.log(showFood);
-    // document.querySelector('#food-' + iconID).classList.toggle('hidden');
 
-    document.querySelectorAll("article").forEach(function (article) {
+    document.querySelectorAll("article").forEach(function(article) {
+      //Checks every article and if it's missing a hidden class --> Add it
       article.classList.add("hidden");
     });
-
+    //Removes the class hidden
     document.querySelector("#food-" + iconID).classList.remove("hidden");
 
     if (containFilter === false) {
+      //Checks if this class doesn't exist
       this.classList.add("activate-filter");
       document.querySelector("#food-" + iconID).classList.add("hidden");
     }
@@ -121,40 +89,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // const next = document.querySelector('#food-'+ iconID).nextElementSibling; // #foo3
     // console.log(next);
-
-    // var elem = document.querySelector('#description-' + iconID);
-    // var siblings = getSiblings(elem);
-    // console.log(siblings);
   }
-
-  // $('#description-' + iconID).toggle().siblings().hide();
-
-  //Hover function on the pizza map
-  // const firstDot = document.querySelector('.featured-circle');
-  // const secondDot = document.querySelector('second-dot');
-  // const thirdDot = document.querySelector('third-dot');
-  // const fourthDot = document.querySelector('fourth-dot');
-  // const map1 = document.querySelector('#map-1');
-  // const map2 = document.querySelector('#map-2');
-  // const map3 = document.querySelector('#map-3');
-  // const map4 = document.querySelector('#map-4');
-
-  // firstDot.addEventListener('mouseover', function (e) { //check for an event hover
-  //     e.preventDefault();
-  //     map1.classList.toggle('faded');
-
-  //  // reset the color after a short delay
-  // setTimeout(function() {
-  //     map1.classList.toggle('faded');
-  //   }, 500);
-  // }, false);
 });
 
-$(document).ready(function () {
+$(document).ready(function() {
   //Form Trigger Javascript
   $(".form")
     .find("input, textarea")
-    .on("keyup blur focus", function (e) {
+    .on("keyup blur focus", function(e) {
       var $this = $(this),
         label = $this.prev("label");
 
@@ -179,7 +121,7 @@ $(document).ready(function () {
       }
     });
 
-  $(".tab a").on("click", function (e) {
+  $(".tab a").on("click", function(e) {
     e.preventDefault();
 
     $(this)
@@ -201,19 +143,19 @@ $(document).ready(function () {
 
   //Pizza map hover functions and effects
 
-  $(".first-dot").hover(function () {
+  $(".first-dot").hover(function() {
     $("#map-1").toggleClass("faded");
   });
 
-  $(".second-dot").hover(function () {
+  $(".second-dot").hover(function() {
     $("#map-2").toggleClass("faded");
   });
 
-  $(".third-dot").hover(function () {
+  $(".third-dot").hover(function() {
     $("#map-3").toggleClass("faded");
   });
 
-  $(".fourth-dot").hover(function () {
+  $(".fourth-dot").hover(function() {
     $("#map-4").toggleClass("faded");
   });
 
@@ -226,7 +168,7 @@ $(document).ready(function () {
   //     console.log(sib);
   // })
 
-  $(window).scroll(function () {
+  $(window).scroll(function() {
     const calculation = ($(window).scrollTop() / $(document).height()) * 720;
     const calculationNegative =
       ($(window).scrollTop() / $(document).height()) * 720;
@@ -255,31 +197,37 @@ var lastId,
   // All list items
   menuItems = topMenu.find("a"),
   // Anchors corresponding to menu items
-  scrollItems = menuItems.map(function () {
+  scrollItems = menuItems.map(function() {
     var item = $($(this).attr("href"));
-    if (item.length) { return item; }
+    if (item.length) {
+      return item;
+    }
   });
 
 // Bind click handler to menu items
 // so we can get a fancy scroll animation
-menuItems.click(function (e) {
+menuItems.click(function(e) {
   var href = $(this).attr("href"),
     offsetTop = href === "#" ? 0 : $(href).offset().top - topMenuHeight + 1;
-  $('html, body').stop().animate({
-    scrollTop: offsetTop
-  }, 850);
+  $("html, body")
+    .stop()
+    .animate(
+      {
+        scrollTop: offsetTop
+      },
+      850
+    );
   e.preventDefault();
 });
 
 // Bind to scroll
-$(window).scroll(function () {
+$(window).scroll(function() {
   // Get container scroll position
   var fromTop = $(this).scrollTop() + topMenuHeight;
 
   // Get id of current scroll item
-  var cur = scrollItems.map(function () {
-    if ($(this).offset().top < fromTop)
-      return this;
+  var cur = scrollItems.map(function() {
+    if ($(this).offset().top < fromTop) return this;
   });
   // Get the id of the current element
   cur = cur[cur.length - 1];
@@ -289,7 +237,11 @@ $(window).scroll(function () {
     lastId = id;
     // Set/remove active class
     menuItems
-      .parent().removeClass("active")
-      .end().filter("[href='#'" + id + "]").parent().addClass("active");
+      .parent()
+      .removeClass("active")
+      .end()
+      .filter("[href='#'" + id + "]")
+      .parent()
+      .addClass("active");
   }
 });
