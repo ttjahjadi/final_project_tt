@@ -1363,6 +1363,15 @@ p {
   flex: 1;
 }
 
+.forgot a {
+  color: #fff;
+}
+
+
+.forgot a:hover {
+  color: rgba(255, 255, 255, 0.753);
+}
+
 .field-wrap input,
 textarea {
   font-size: 22px;
